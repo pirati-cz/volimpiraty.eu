@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /global/
 Disallow: /public/
 Disallow: /root/
+
