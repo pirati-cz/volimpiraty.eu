@@ -264,9 +264,9 @@
                 .left-side .left-side-carousel .left-side-carousel-item p span { font-style: italic; font-family: helvetica, arial; font-size: 13px; color: #e8dfca; }
     
     .right-side { padding: 0 0 110px 0; margin: 30px; width: 477px; float: right; }
-        .right-side h1 { margin: 0; color: #4d4845; font-size: 25px; line-height: 20px; font-weight: 800; }
+        .right-side h1 { margin: 0; color: #4d4845; text-transform: uppercase; font-size: 25px; line-height: 20px; font-weight: 800; }
         .right-side h2 { margin: 15px 0 0 0; color: #4d4845; font-size: 17px; line-height: 15px; font-weight: 800; }
-        .right-side .anotation { font-size: 14px; line-height: 12px; margin: 10px 0 0 0; font-style: italic; font-family: helvetica, arial; }
+        .right-side .anotation { font-variant: small-caps; font-size: 14px; line-height: 12px; margin: 10px 0 0 0; font-style: italic; font-family: helvetica, arial; }
         .right-side .perex { color: #4d4845; font-size: 18px; line-height: 27px; margin: 30px 0 30px 0; }
         .right-side em { color: #666666; font-style: italic; font-family: helvetica, arial; }
         
