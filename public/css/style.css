@@ -32,7 +32,7 @@
             url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg'),
              url('../fonts/opensans-regular-webfont.woff') format('woff'),
              url('../fonts/opensans-regular-webfont.ttf') format('truetype');
-        font-weight: normal;
+        font-weight: normal; 
         font-style: normal;
     }
     @font-face {
@@ -280,7 +280,7 @@
         footer #footer-copyright { margin: 0 0 0 0; padding: 0; }
             footer #footer-copyright p { font-size: 12px; margin: 0; color: #94877d; float: left; font-weight: normal; padding: 10px 0 0 0; } 
             footer #footer-copyright img { display: inline-block; } 
-
+        footer #footer-copyright p.rotate { padding: 0 10px 0 0; transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -o-transform: rotate(180deg); }
 
 /* Browser Resets */
 .slides,
