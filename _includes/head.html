@@ -7,6 +7,15 @@
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}"> 
     <meta name="keywords" content="{{ site.keywords }}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="og:url" content="{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ site.url }}/images/fblogo.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="1200"/>
+    <meta property="og:description" content="{{ site.description }}"/>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link href="favicon.ico" rel="icon" />
 	<link href="css/normalize.css" rel="stylesheet" type="text/css" />
