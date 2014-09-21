@@ -1,0 +1,306 @@
+/* -------------------------------------------------------------------------------- /
+
+	Description: Stylesheet pirati.cz
+	Author: Studio 9
+	Version: 1.0
+	Author URI: http://studio9.cz
+
+	+----------------------------------------------------+
+		TABLE OF CONTENTS
+	+----------------------------------------------------+
+
+    [0] IMPORT FONTS
+    [1] SETUP
+    [2] LAYOUT
+    [2.1] HEADER
+    [2.2] BODY
+    [2.3] LEFT COL
+    [2.4] FOOTER
+    [3] COLUMN SHADOWS    		
+    [4] MEDIA QUERIES
+	   	
+/ -------------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------------- /
+	[0]	IMPORT FONTS
+/ -------------------------------------------------------------------------------- */
+    @font-face {
+        font-family: 'open-sans';
+        src: url('../fonts/opensans-regular-webfont.eot');
+        src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg'),
+             url('../fonts/opensans-regular-webfont.woff') format('woff'),
+             url('../fonts/opensans-regular-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'open-sans';
+        src: url('../fonts/opensans-bold-webfont.eot');
+        src: url('../fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/opensans-bold-webfont.svg#open_sansbold') format('svg'),
+             url('../fonts/opensans-bold-webfont.woff') format('woff'),
+             url('../fonts/opensans-bold-webfont.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'open-sans';
+        src: url('../fonts/opensans-extrabold-webfont.eot');
+        src: url('../fonts/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/opensans-extrabold-webfont.svg#open_sansextrabold') format('svg'),
+             url('../fonts/opensans-extrabold-webfont.woff') format('woff'),
+             url('../fonts/opensans-extrabold-webfont.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+    }
+    
+/* -------------------------------------------------------------------------------- /
+	[1]	SETUP
+/ -------------------------------------------------------------------------------- */
+    html { height: 100%; margin: 0; padding: 0; }
+    body { font-family: 'open-sans', Helvetica, arial, sans-serif; background: #fff url('../images/bg.jpg') 50% 50% repeat-y fixed; z-index: 0; position: relative; z-index: 0; width: 100%; min-height: 100%; line-height: 26px; color: #000; font-size: 13px; *zoom: 1;  }
+    body.full { background:none; background-color:#fff; }
+    
+    .clearfix { *zoom: 1; }
+    .clearfix:before, .clearfix:after { display: table; content: ""; line-height: 0; }
+    .clearfix:after { clear: both;  }
+    
+    .hide-text { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+    
+    .float-left { float: left; }
+    .float-right { float: right; }
+    
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    .text-center { text-align: center; }
+    
+    .block { display: block }
+    
+    .bold { font-weight: bold; }
+    .italic { font-style: italic; }
+    .bold-italic { font-weight: bold; font-style: italic; }
+    
+    .red { color: #78303a; }
+    
+    /* === links === */
+    a, a:link, a:visited, a:hover, a:focus, a:active { text-decoration: none; }
+    a, a:link { color: #bd2f11; background-color: transparent; text-decoration: none; }
+    a:visited { color: #bd2f11; }
+    a:focus { color: #762311; background-color: transparent; }
+    a:hover, a:active { color: #762311; background-color: transparent; }
+    
+    /* === typography === */
+    p { margin: 15px 0 0 0 }
+    
+    .no-wrap { white-space: nowrap; }
+
+    ::-moz-selection { color: #000; background: #bce9ee; text-shadow: none; }
+    ::selection { color: #000; background: #bce9ee; text-shadow: none; }
+    
+    
+    input[type='text'], input[type='password'], select, textarea { margin: 0 0 25px 0; color: #666666; border: 1px solid #d3c2b6; padding: 12px 15px; width: 100%; box-sizing: border-box; box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.17); }
+    
+    .button { background-color: #bd2f11; color: white; padding: 15px 20px 15px 20px; border: none; }
+    
+
+/* -------------------------------------------------------------------------------- /
+	[2]	LAYOUT
+/ -------------------------------------------------------------------------------- */
+    .row { margin-left: -20px; *zoom: 1; }
+    .row.no-margins { margin-left: 0; }
+    .row:before, .row:after { display: table; content: ""; line-height: 0;  }
+    .row:after { clear: both; }
+    
+    [class*="span"] { float: left; min-height: 1px; margin-left: 20px; }
+    
+    .row.no-margins [class*="span"] { margin-left: 0;  }
+    
+    .container { width: 980px; }
+
+    .span12 { width: 980px; }
+    .span11 { width: 880px; }
+    .span10 { width: 800px; }
+    .span9 { width: 715px; }
+    .span8 { width: 636px; }
+    .span7 { width: 554px; }
+    .span6 { width: 490px; }
+    .span5 { width: 390px; }
+    .span4 { width: 313px; }
+    .span3 { width: 245px; }
+    .span2 { width: 146px; }
+    .span1 { width: 60px; }
+    
+    .no-margins .span12 { width: 980px; } 
+    .no-margins .span11 { width: 900px; } 
+    .no-margins .span10 { width: 820px; }
+    .no-margins .span9 { width: 738px; } 
+    .no-margins .span8 { width: 656px; } 
+    .no-margins .span7 { width: 574px; }
+    .no-margins .span6 { width: 480px; }
+    .no-margins .span5 { width: 410px; }
+    .no-margins .span4 { width: 320px; }
+    .no-margins .span3 { width: 240px; }
+    .no-margins .span2 { width: 164px; }
+    .no-margins .span1 { width: 80px; }
+    
+    
+    .offset12 { margin-left: 1004px; }
+    .offset11 { margin-left: 922px; }
+    .offset10 { margin-left: 840px; }
+    .offset9 { margin-left: 758px; }
+    .offset8 { margin-left: 676px; }
+    .offset7 { margin-left: 594px; }
+    .offset6 { margin-left: 512px; }
+    .offset5 { margin-left: 430px; }
+    .offset4 { margin-left: 348px; }
+    .offset3 { margin-left: 266px; }
+    .offset2 { margin-left: 184px; }
+    .offset1 { margin-left: 102px; }
+    
+    .row-fluid { width: 100%; *zoom: 1;  }
+    .row-fluid:before, .row-fluid:after { display: table; content: ""; line-height: 0;  }
+    .row-fluid:after { clear: both;  }
+    .row-fluid [class*="span"] { display: block; width: 100%; min-height: 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; margin-left: 2.07469%; *margin-left: 2.02282%;  }
+    .row-fluid [class*="span"]:first-child { margin-left: 0; }
+    .row-fluid .controls-row [class*="span"] + [class*="span"] { margin-left: 2.07469%;  }
+
+    .row-fluid .span12 { width: 100%; *width: 99.94813%; }
+    .row-fluid .span11 { width: 91.49378%; *width: 91.44191%; }
+    .row-fluid .span10 { width: 82.98755%; *width: 82.93568%; }
+    .row-fluid .span9 { width: 74.48133%; *width: 74.42946%; }
+    .row-fluid .span8 { width: 65.9751%; *width: 65.92324%; }
+    .row-fluid .span7 { width: 57.46888%; *width: 57.41701%; }
+    .row-fluid .span6 { width: 48.96266%; *width: 48.91079%; }
+    .row-fluid .span5 { width: 40.45643%; *width: 40.40456%; }
+    .row-fluid .span4 { width: 31.95021%; *width: 31.89834%; }
+    .row-fluid .span3 { width: 23.44398%; *width: 23.39212%; }
+    .row-fluid .span2 { width: 14.93776%; *width: 14.88589%; }
+    .row-fluid .span1 { width: 6.43154%; *width: 6.37967%; }
+
+    .row-fluid .offset12 { margin-left: 104.14938%; *margin-left: 104.04564%; }
+    .row-fluid .offset12:first-child { margin-left: 102.07469%; *margin-left: 101.97095%; }
+    .row-fluid .offset11 { margin-left: 95.64315%; *margin-left: 95.53942%; }
+    .row-fluid .offset11:first-child { margin-left: 93.56846%; *margin-left: 93.46473%; }
+    .row-fluid .offset10 { margin-left: 87.13693%; *margin-left: 87.0332%; }
+    .row-fluid .offset10:first-child { margin-left: 85.06224%; *margin-left: 84.95851%; }
+    .row-fluid .offset9 { margin-left: 78.63071%; *margin-left: 78.52697%; }
+    .row-fluid .offset9:first-child { margin-left: 76.55602%; *margin-left: 76.45228%; }
+    .row-fluid .offset8 { margin-left: 70.12448%; *margin-left: 70.02075%; }
+    .row-fluid .offset8:first-child { margin-left: 68.04979%; *margin-left: 67.94606%; }
+    .row-fluid .offset7 { margin-left: 61.61826%; *margin-left: 61.51452%; }
+    .row-fluid .offset7:first-child { margin-left: 59.54357%; *margin-left: 59.43983%; }
+    .row-fluid .offset6 { margin-left: 53.11203%; *margin-left: 53.0083%; }
+    .row-fluid .offset6:first-child { margin-left: 51.03734%; *margin-left: 50.93361%; }
+    .row-fluid .offset5 { margin-left: 44.60581%; *margin-left: 44.50207%; }
+    .row-fluid .offset5:first-child { margin-left: 42.53112%; *margin-left: 42.42739%; }
+    .row-fluid .offset4 { margin-left: 36.09959%; *margin-left: 35.99585%; }
+    .row-fluid .offset4:first-child { margin-left: 34.0249%; *margin-left: 33.92116%; }
+    .row-fluid .offset3 { margin-left: 27.59336%; *margin-left: 27.48963%; }
+    .row-fluid .offset3:first-child { margin-left: 25.51867%; *margin-left: 25.41494%; }
+    .row-fluid .offset2 { margin-left: 19.08714%; *margin-left: 18.9834%; }
+    .row-fluid .offset2:first-child { margin-left: 17.01245%; *margin-left: 16.90871%; }
+    .row-fluid .offset1 { margin-left: 10.58091%; *margin-left: 10.47718%; }
+    .row-fluid .offset1:first-child { margin-left: 8.50622%; *margin-left: 8.40249%; }
+
+    [class*="span"].hide, .row-fluid [class*="span"].hide { display: none; }
+    [class*="span"].float-right, .row-fluid [class*="span"].float-right { float: right; }
+
+    .container { position: relative; margin-right: auto; margin-left: auto; *zoom: 1; height: 100%; }
+    .container:before, .container:after, .container-fluid:before, .container-fluid:after { display: table; content: ""; line-height: 0; }
+    .container:after, .container-fluid:after { clear: both;  }
+    
+    .container-fluid { padding-right: 20px; padding-left: 20px; *zoom: 1;  }
+    
+    /* -------------------------------------------------------------------------------- /
+        [2.1] HEADER
+    / -------------------------------------------------------------------------------- */
+    .header-top { background: white; }
+        .header-top nav #menu { position: relative; margin: 0; padding: 0; list-style: none; }
+            .header-top nav #menu > li { float: left; list-style: none; display: inline-block; margin: 0; padding: 0; }
+                .header-top nav #menu > li > a { float: left; border-left: 1px solid #e1e0e0; text-transform: uppercase; display: inline-block; position: relative; font-size: 15px; padding: 17px 15px 16px 15px; line-height: 19px; font-weight: 600; color: #4d4845; }
+                .header-top nav #menu > li:last-child > a { border-right: 1px solid #e1e0e0; }
+                .header-top nav #menu > li a:hover, .header-top nav #menu li.active a { color: #fff; background: #363230; text-decoration: none; }
+    
+    .header-top .header-social { text-align: right; margin: 7px 0 0 0; padding: 0; list-style: none; float: right; }
+        .header-top .header-social li { display: inline-block; margin: 0 0 0 5px; padding: 0; list-style: none; float: left; }
+            .header-top .header-social li a { color: white; text-indent: 999px; overflow: hidden; display: block; width: 35px; height: 35px; }
+            .header-top .header-social li.twitter a { background: url('../images/icon-twitter.png') 50% 50% no-repeat; }
+            .header-top .header-social li.twitter a:hover { background: url('../images/icon-twitter-hover.png') 50% 50% no-repeat; }
+            .header-top .header-social li.facebook a { background: url('../images/icon-fb.png') 50% 50% no-repeat; }
+            .header-top .header-social li.facebook a:hover { background: url('../images/icon-fb-hover.png') 50% 50% no-repeat; }
+            .header-top .header-social li.youtube a { background: url('../images/icon-youtube.png') 50% 50% no-repeat; }
+            .header-top .header-social li.youtube a:hover { background: url('../images/icon-youtube-hover.png') 50% 50% no-repeat; }
+            .header-top .header-social li.rss a { background: url('../images/icon-rss.png') 50% 50% no-repeat; }
+            .header-top .header-social li.rss a:hover { background: url('../images/icon-rss-hover.png') 50% 50% no-repeat; }
+            
+    header.header { background: #363230; padding: 25px 0; z-index: 99; width: 100%; }
+        header.header .logo { z-index: 99; margin: 0; height: 63px; }
+        
+        header.header .header-slogan { float: left; width: 490px; }
+            header.header .header-slogan strong { border-bottom: 1px solid #4a4745; padding: 5px 0 5px 0; text-align: right; display: block; color: white; text-transform: uppercase; font-size: 22px; font-weight: 800; }
+            header.header .header-slogan span { text-align: right; display: block; color: white; padding: 5px 0 0 0; text-transform: uppercase; font-size: 16px; font-weight: normal; }
+        
+        header.header .header-button-help { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.48); float: right; display: block; padding: 20px 15px; font-size: 17px; font-weight: 800; color: white; background: #12adbb url('../images/button.jpg') 50% 00% repeat-x; -webkit-box-shadow: 0px 0px 5px black; -moz-box-shadow: 0px 0px 5px black; -o-box-shadow: 0px 0px 5px black; box-shadow: 0px 0px 5px black; border-radius: 5px; -o-border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; }
+        header.header .header-button-help:hover { background: #12adbb; }
+    
+    /* -------------------------------------------------------------------------------- /
+        [2.2] BODY
+    / -------------------------------------------------------------------------------- */
+
+    .left-side { padding: 0 0 110px 0; float: left; width: 443px; }
+        .left-side h3 { text-transform: uppercase; margin: 20px 0 10px 0; font-size: 15px; color: #e1d1ae; font-weight: 800; }
+        .left-side .item { font-size: 15px; color: #e1d1ae; font-weight: 800; }
+        .left-side .left-side-carousel ul { -webkit-transform: translate3d(0, 0px, 0px)!important; -o-webkit-transform: translate3d(0, 0px, 0px)!important; transform: translate3d(0, 0px, 0px)!important; -moz-webkit-transform: translate3d(0, 0px, 0px)!important; width: 100%!important; padding: 0; }
+        .left-side .left-side-carousel li { width: 100%!important; padding: 0; }
+        .left-side .left-side-carousel .left-side-carousel-item { margin: 0; padding: 0; }
+            .left-side .left-side-carousel .left-side-carousel-item img.thumb { float: left; width:auto; }
+            /*.left-side .left-side-carousel .left-side-carousel-item img.thumb { display: block; }*/
+            
+            .left-side .left-side-carousel .left-side-carousel-item p { padding: 15px 15px; height: 36px; overflow: hidden; margin: 0; width: 357px; float: right; border-bottom: 1px solid #5d5753; }
+            .left-side .left-side-carousel .left-side-carousel-item:hover p, .left-side .left-side-carousel .flex-active-slide p { background: #363230; }
+                .left-side .left-side-carousel .left-side-carousel-item p strong { line-height: 17px; font-size: 18px; font-weight: 800; color: white; display: block; }
+                .left-side .left-side-carousel .left-side-carousel-item p span { font-style: italic; font-family: helvetica, arial; font-size: 13px; color: #e8dfca; }
+    
+    .right-side { padding: 0 0 110px 0; margin: 30px; width: 477px; float: right; }
+        .right-side h1 { margin: 0; color: #4d4845; text-transform: uppercase; font-size: 25px; line-height: 20px; font-weight: 800; }
+        .right-side h2 { margin: 15px 0 0 0; color: #4d4845; font-size: 17px; line-height: 15px; font-weight: 800; }
+        .right-side .anotation { font-variant: small-caps; font-size: 14px; line-height: 12px; margin: 10px 0 0 0; font-style: italic; font-family: helvetica, arial; }
+        .right-side .perex { color: #4d4845; font-size: 18px; line-height: 27px; margin: 30px 0 30px 0; }
+        .right-side em { color: #666666; font-style: italic; font-family: helvetica, arial; }
+        
+    .right-side.w2 { width: 920px !important; }
+                
+    /* -------------------------------------------------------------------------------- /
+        [2.4] FOOTER
+    / -------------------------------------------------------------------------------- */
+        footer { background: #363230; padding: 15px 0 10px 0; position: absolute; bottom: 0; left: 0; right: 0; }
+        
+        footer #footer-copyright { margin: 0 0 0 0; padding: 0; }
+            footer #footer-copyright p { font-size: 12px; margin: 0; color: #94877d; float: left; font-weight: normal; padding: 10px 0 0 0; } 
+            footer #footer-copyright img { display: inline-block; } 
+
+
+/* Browser Resets */
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider { margin: 0; padding: 0; }
+.flexslider .slides > li { cursor: pointer; display: none; -webkit-backface-visibility: hidden; } /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+#carousel .flex-viewport { overflow: visible!important; }
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* Direction Nav */
+.flex-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block;  position: absolute; top: 50%; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
+
+#c1 { display: none; }

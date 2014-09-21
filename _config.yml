@@ -1,0 +1,54 @@
+# Site settings
+title: Piráti.cz
+description: > # this means to ignore newlines until "baseurl:"
+  Evropa je naše moře! S tímto heslem vstupuje Česká pirátská strana 
+  do Evropských parlamentních voleb, kde bude prosazovat základní pirátské myšlenky.
+keywords: piráti,evropa,volby 2014,evropský parlament,kandidáti,Ivan Bartoš,Marcel Kolaja,Markéta Gregorová,Vojtěch Pikal,Tomáš Tožička,Česká pirátská strana
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://volimpiraty.cz" # the base hostname & protocol for your site
+ga: UA-46899507-7
+twitter: PiratePartyCZ
+facebook: ceska.piratska.strana
+youtube: CeskaPiratskaStrana
+
+# Build settings
+markdown: kramdown
+
+# candidates
+candidates:
+    bartos:
+        fullname: Phdr. Ivan Bartoš, Ph.D.
+        name: Ivan Bartoš
+        sub: Lídr kandidátky
+        image: 1-ivan-th.jpg
+        image_big: 1-ivan.jpg
+        page: ivan-bartos.html
+    kolaja:
+        fullname: Marcel Kolaja
+        name: Marcel Kolaja
+        sub: Kandidát číslo 2
+        image: 5-marcel-th.jpg
+        image_big: 5-marcel.jpg
+        page: marcel-kolaja.html
+    gregorova:
+        fullname: Markéta Gregorová
+        name: Markéta Gregorová
+        sub: Kandidát číslo 3
+        image: 4-marketa-th.jpg
+        image_big: 4-marketa.jpg
+        page: marketa-gregorova.html
+    pikal:
+        fullname: Vojtěch Pikal
+        name: Vojtěch Pikal
+        sub: Kandidát číslo 4
+        image: 3-vojtech-th.jpg
+        image_big: 3-vojtech.jpg
+        page: vojtech-pikal.html
+    tozicka:
+        fullname: Tomáš Tožička
+        name: Tomáš Tožička
+        sub: Kandidát číslo 5
+        image: 2-tomas-th.jpg
+        image_big: 2-tomas.jpg
+        page: tomas-tozicka.html
+
