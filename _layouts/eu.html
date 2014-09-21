@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="cs"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="cs"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="cs"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="cs"><!--<![endif]-->
+    {% include head.html %}
+    <body{% if page.wide %} class="full"{% endif %}>
+        <div class="header-top">
+            <div class="container">
+                <div class="row no-margins">
+                    <div class="span9">
+                        <div class="nav-touch"></div>
+                        <nav>
+                            <ul class="clearfix" id="menu">
+                                <li{% if page.url != '/volim-v-cesku.html' %} class="active"{% endif %}><a href="/">TOP 5</a></li>
+                                <li{% if page.url == '/volim-v-cesku.html' %} class="active"{% endif %}><a href="volim-v-cesku.html">Volím v Česku</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="span3">
+                        <ul class="header-social">
+                            <li class="twitter"><a href="https://twitter.com/{{ site.twitter }}" target="_blank">Twitter</a></li>
+                            <li class="facebook"><a href="https://www.facebook.com/{{ site.facebook }}" target="_blank">Facebook</a></li>
+                            <li class="youtube"><a href="http://www.youtube.com/user/{{ site.yoututbe }}" target="_blank">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="container">
+                <div class="row no-margins">
+                    <div class="span3">
+                        <div class="logo">
+                            <a href="/" title="přejít na úvodní stránku"><img src="images/logo.png" alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="span9">
+                        <div class="header-slogan">
+                            <strong>Evropa je naše moře</strong>
+                            <span>24 Pirátských stran v Evropě</span>
+                        </div>
+                        <a href="http://www.pirati.cz/fo/fundraising/start" target="_blank" class="float-right header-button-help">Chci pomoci pirátům </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="container">
+            {% if page.wide != true %}
+            <div class="left-side">
+                <div id="slider" class="flexslider">
+                    <ul class="slides">
+                        {% for candidate in site.candidates %}
+                        {% assign key = candidate[0] %}
+                        <li>
+                            <a href="{{ site.candidates[key].page }}">
+                                <img src="images/candidates/{{ site.candidates[key].image_big }}" alt="" />
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <h3>Naší kandidáti</h3>
+                <div id="carousel" class="left-side-carousel flexslider">
+                    <ul class="slides">
+                        {% for candidate in site.candidates %}
+                        {% assign key = candidate[0] %}
+                        <li onclick="document.location.href='{{ site.candidates[key].page }}';">
+                            <a class="left-side-carousel-item" href="{{ site.candidates[key].page }}">
+                                <img class="thumb" src="images/candidates/{{ site.candidates[key].image }}" alt="">
+                                <p>
+                                    <strong>{{ site.candidates[key].fullname }}</strong>
+                                    <span>{{ site.candidates[key].sub }}</span>
+                                </p>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="right-side">
+                {{ content }} 
+            </div>
+            {% endif %}
+            {% if page.wide %}
+            <div class="right-side w2">
+                {{ content }}
+            </div>
+            {% endif %}
+        </section>
+        <footer>
+            <section id="footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="span9 text-left">
+                            <p>
+                                <span style="-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);-khtml-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg);display:inline-block;font-size:1em">©</span> Piráti, 2014. Všechna práva vyhlazena. Kopírování je aktem lásky. | Obsah této stránky můžete volně šířit podle licence <a href="http://creativecommons.org/licenses/by/3.0/cz/">Creative commons Uveďte autora 3.0</a>. {{ page.footer }}
+                            </p>
+                        </div>
+                        <div class="span3 text-right">
+                            <img src="images/logo-footer.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </body>
+</html>
