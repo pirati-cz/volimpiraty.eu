@@ -50,27 +50,26 @@
             <div class="left-side">
                 <div id="slider" class="flexslider">
                     <ul class="slides">
-                        {% for candidate in site.candidates %}
-                        {% assign key = candidate[0] %}
+                        {% assign sorted_pages = (site.posts | where: "category", "candidate" | sort: 'number') %}
+                        {% for candidate in sorted_pages %}
                         <li>
-                            <a href="{{ site.candidates[key].page }}">
-                                <img src="images/candidates/{{ site.candidates[key].image_big }}" alt="" />
+                            <a href="{{ candidate.url }}">
+                                <img src="images/candidates/{{ candidate.image }}" alt="" />
                             </a>
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
-                <h3>Naší kandidáti</h3>
+                <h3>Naši kandidáti</h3>
                 <div id="carousel" class="left-side-carousel flexslider">
                     <ul class="slides">
-                        {% for candidate in site.candidates %}
-                        {% assign key = candidate[0] %}
-                        <li onclick="document.location.href='{{ site.candidates[key].page }}';">
-                            <a class="left-side-carousel-item" href="{{ site.candidates[key].page }}">
-                                <img class="thumb" src="images/candidates/{{ site.candidates[key].image }}" alt="">
+                        {% for candidate in sorted_pages %}
+                        <li onclick="document.location.href='{{ candidate.url }}';">
+                            <a class="left-side-carousel-item" href="{{ candidate.page }}">
+                                <img class="thumb" src="images/candidates/thumbnails/{{ candidate.image }}" alt="">
                                 <p>
-                                    <strong>{{ site.candidates[key].fullname }}</strong>
-                                    <span>{{ site.candidates[key].sub }}</span>
+                                    <strong>{{ candidate.fullname }}</strong>
+                                    <span>{{ candidate.sub }}</span>
                                 </p>
                             </a>
                         </li>
@@ -79,12 +78,24 @@
                 </div>
             </div>
             <div class="right-side">
+<h1>{{ page.title }}</h1>
+<div class="anotation">{{ page.annotation }}</div>
+  <div class="perex">{{ page.perex }} </div>
                 {{ content }} 
+            <div id="c1">{{ page.number }}</div>
             </div>
             {% endif %}
             {% if page.wide %}
+            {% if page.number %}
+            <div id="c{{ page.number }}">{{ page.number }}</div>
+            {% endif %}
             <div class="right-side w2">
+<h1>{{ page.title }}</h1>
+<div class="anotation">{{ page.annotation }}</div>
                 {{ content }}
+            {% if page.number %}
+            <div id="c{{ page.number }}">{{ page.number }}</div>
+            {% endif %}
             </div>
             {% endif %}
         </section>
